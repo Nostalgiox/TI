@@ -1,18 +1,93 @@
+/*
+Ogólne informacje
+
+Styleguide 1.
+*/
+/* 
+Wstęp
+
+Kss, czyli Knyle Style Sheets, to dokumentacja stylów, która opisuje strukturę i zastosowanie styli CSS w projekcie.
+Poniżej znajdziesz szczegółowe informacje dotyczące stylów zastosowanych w projekcie
+
+Styleguide 1.1
+*/
+
+
+/* 
+Zasady ogólne
+
+Styleguide 2
+*/
+
+/* 
+Ustawienie marginesów dla znaczników body, h1, h2, p, ul, li
+
+Markup:
+    body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+Zastosowano resetowanie marginosów i paddingu dla podstawowych elementów HTML, eliminując domyślne wartości.
+
+Styleguide 2.1
+*/
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
 }
+
+/* 
+Czcionka dla body
+
+Ustawiono czcionkę dla całej strony, ustalono wysokość wiersza oraz kolor tła.
+
+Markup:
+    body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+Styleguide 2.2
+*/
+
 
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #f8f8f8;
 }
+/* 
+Maksymalna Szerokość Kontenera
+
+Określono maksymalną szerokość kontenera, a także wycentrowano go na stronie.
+
+Markup:
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+}
+
+Styleguide 2.3
+*/
+
+
+
+
+
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+
+/* 
+Nawigacja
+
+Styleguide 3
+*/
 
 .navbar {
     background-color: #333;
@@ -25,6 +100,35 @@ body {
     padding: 10px 0;
 }
 
+/* 
+Styl Navbaru
+
+Ustawiono kolor tła dla nawigacji
+
+Markup:
+    .navbar {
+        background-color: #333;
+}
+Styleguide 3.1
+*/
+
+
+/*
+Styl Nawigacji Górnej 
+
+Dostosowano styl nawigacji górnej, używając flexboxa do rozmieszczenia elementów.
+
+Markup:
+    .navbar-top {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+Styleguide 3.2
+*/
+
 .navbar-top a {
     text-decoration: none;
     color: white;
@@ -35,6 +139,31 @@ body {
     position: relative;
     padding: 6px 0;
 }
+
+/* 
+Animacja podczas najechania na li
+
+Dodano efet przedłużającej się linii podczas najechania kursorem na link
+
+Markup:
+    .navbar-top li a:before {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 0%;
+        background-color: white;
+        bottom: 0;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-top li a:hover:before {
+        width: 100%;
+    }
+
+Styleguide 3.3
+*/
+
 .navbar-top li a:before {
     content: '';
     position: absolute;
@@ -49,6 +178,77 @@ body {
 .navbar-top li a:hover:before {
     width: 100%;
 }
+
+
+
+/* 
+Sekcja strony
+
+W tej sekcji zostanie opisany kod CSS dla podanego kodu HTML:
+
+Markup:
+    <header class="about-me">  
+        <h1>OPIS PROJEKTU</h1>
+        <div id="about-me-div">Organizator Zadań to innowacyjne rozwiązanie stworzone z myślą 
+            o zapewnieniu użytkownikom efektywnego planowania i zarządzania ich codziennymi obowiązkami. 
+            Celem projektu jest dostarczenie prostego, intuicyjnego narzędzia, które ułatwi organizację zadań, 
+            zwiększy produktywność oraz pozwoli skoncentrować się na priorytetach.
+        </div>
+    </header>
+
+
+        <div class="header-project-function">
+            <h2>Funkcje projektu</h2>
+        </div>
+        <section class="project-function">
+            <p><img src="images/OIP.png" alt="img"> <br>Intuicyjne dodawanie zadań.</p>
+            <p><img src="images/Vector-Checklist-PNG.png" alt="img"> <br> Priorytetyzacja zadań.</p>
+            <p><img src="images/Clipboard-Checklist-PNG-Free-Download.png" alt=""> <br> Licznik zrobionych zadań.</p>
+        </section>
+
+Styleguide 4
+*/
+/* 
+Styl Sekcji "Opis projektu"
+
+Dostosowano wygląd sekcji "About-me" poprzez zmianę koloru tła i tekstu
+
+Markup:
+    .about-me {
+        background-color: #4c0099;
+        color: white;
+        text-align: center;
+        padding: 10px;
+}
+
+Styleguide 4.1
+*/
+
+/* 
+Styl Sekcji Funkcje Projektu
+
+Ustawiono styl sekcji zawierającej funkcje projektu, korzystając z flexboxa do rozmieszczenia elementów
+
+Markup:
+    .project-function { 
+        justify-content: space-around; 
+        align-items: center; 
+        display: flex; 
+        flex-direction: row; 
+        color: black;
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} 
+
+Styleguide 4.2
+*/
+
+
+
 
 
 .about-me {
@@ -92,6 +292,31 @@ body {
 .project-function img:hover {
     animation: imganimation 2s infinite;
 }
+
+/* 
+Animacja dla obrazków w Sekcji Funkcje Projektu
+
+Dodano animację dla obrazków w sekcji "Funkcje Projektu", powodującą ich powiększanie i zmniejszanie przy najechaniu kursorem.
+
+Markup:
+    .project-function img:hover {
+    animation: imganimation 2s infinite;
+}
+
+@keyframes imganimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+Styleguide 4.3
+*/
 
 @keyframes imganimation {
     0% {
@@ -258,7 +483,183 @@ footer {
     }
 }
 
+/* 
+Formularz
 
+W tej sekcji zostanie opisany kod CSS dla podanego kodu HTML:
+
+Markup:
+    <section class="form-popup" id="topForm">
+        <form action="#" name="contact-form" class="formContainer" onsubmit="return validateForm()">
+            <label for="email">Podaj swój email: </label>
+            <input type="email" class="form-inputs" id="email" name="email">
+            <label for="phone-number">Podaj swój nr telefonu: </label>
+            <input inputmode="numeric" pattern="[0-9]*" class="form-inputs" id="phone-number" name="phone-number">
+            <label for="textarea">Treść wiadomości: </label>
+            <textarea name="textarea" id="textfield"></textarea>
+            <br>
+            <button id="wyslij">Wyślij</button>
+            <button type="button" id="cancel" onclick="closeForm()">Wstecz</button>
+        </form>
+    </section>
+
+Styleguide 5
+*/
+
+/* 
+Styl Formularza Pop-up
+
+Zdefiniowano styl dla formularza pop-up, określając jego wygląd i animacje
+
+Markup:
+    .form-popup {
+        display: none;
+        position: fixed;
+        width: 80%;
+        top: 30%;
+        left: 10%;
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.7);
+        z-index: 9;
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+Styleguide 5.1
+*/
+
+
+/* 
+Footer
+
+W tej sekcji zostanie opisany kod CSS dla podanego kodu HTML:
+
+Markup:
+    <footer>
+            <div class="row">
+                <a href="https://github.com/Nostalgiox" target="_blank"><img src="images/icons/github.svg" alt="img"> Github</a>
+                <a href="https://open.spotify.com/?" target="_blank"><img src="images/icons/spotify.svg" alt="img"> Spotify</a>
+            </div>
+        </footer>
+
+Styleguide 6
+*/
+/* 
+Styl Stopki
+
+Zdefiniowano styl stopki, ustawiając kolor tła, przezroczystość, cień i centrowanie zawartości.
+
+Markup:
+    footer {
+        background-color: white;
+        opacity: .8;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+        overflow:hidden;
+        text-align: center;
+        color: white;
+        
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+Styleguide 6.1
+*/
+
+/* 
+Styl ikon w Stopce
+
+Dostosowano styl ikon w stopce, nadając kolory oraz flexboxy.
+
+Markup:
+    .row {
+        display: flex;
+        justify-content: space-around;
+        width: 300px;
+    }
+    .row > a {
+        
+        text-decoration: none;
+        color: black;
+        
+    }
+    .row >a:hover {
+        color: #4c0099;
+        
+    }
+    .row > a > img {
+        color: black;
+    }
+Styleguide 6.2
+*/
+
+/* 
+Media query
+
+Styleguide 7
+*/
+/* 
+Responsywność dla Ekranów o Szerokości do 600px
+
+Dodano reguły CSS dostosowujące ukląd dla ekranów o szerokości do 600px,
+m.in. dla nawigacji, sekcji "Funkcje Projektu", i formularza
+
+Markup:
+    @media only screen and (max-width: 600px) {
+        .navbar-top {
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        #toggle-menu {
+            display: block;
+        }
+
+
+        .project-function {
+            flex-direction: column;   
+        }
+
+        .task-item {
+            flex-direction: column;
+        }
+        .form-popup {
+            width: 100%;
+            
+        }
+        .form-inputs  {
+            width: 50%;
+        }
+    }
+Styleguide 7.1
+*/
+
+/* 
+Carousel
+
+W tej sekcji zostanie opisany kod CSS dla danego fragmentu kodu HTML:
+
+Markup:
+    <h2>Galeria zdjęć</h2>
+        <section aria-label="Photos" class="gallery">
+            <div class="carousel" data-carousel>
+                <button class="carousel-button prev" data-carousel-button="previous">&#x21e4;</button>
+                <button class="carousel-button next" data-carousel-button="next">&#x21e5;</button>
+                <ul data-slides>
+                    <li class="slide" data-active><img src="images/gallery/pexels-christian-clado-11586435.jpg" alt="img" class="slides"></li>
+                    <li class="slide"><img src="images/gallery/pexels-eberhard-grossgasteiger-454880.jpg" alt="img" class="slides"></li>
+                    <li class="slide"><img src="images/gallery/pexels-james-wheeler-417074.jpg" alt="img" class="slides"></li>
+                    <li class="slide"><img src="images/gallery/pexels-nick-valmores-4555893.jpg" alt="img" class="slides"></li>
+                    <li class="slide"><img src="images/gallery/pexels-nick-valmores-4555923.jpg" alt="img" class="slides"></li>
+                </ul>
+            </div>
+        </section>
+        
+Styleguide 8
+*/
 .form-popup {
     display: none;
     position: fixed;
@@ -324,6 +725,55 @@ label {
     border: none;
     cursor: pointer;
 }
+
+/* 
+Styl Carousel
+
+Określono szerokość, wysokość i pozycję dla karuzeli z użyciem pełnej dostępnej wysokości widoku. (100vh).
+
+Markup:
+    .carousel {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+
+Styleguide 8.1
+*/
+
+/* 
+Styl Slajdu w Carousel
+
+Zastosowano styl dla slajdu, ustawiając go na absolutną pozycję w karuzeli z zerową przezroczystością i animacją zmiany przezroczystości.
+
+Markup: 
+    .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: 200ms opacity ease-in-out;
+        transition-delay: 200ms;
+}
+
+Styleguide 8.2
+*/
+/* 
+Styl Obrazka w Slajdzie
+
+Zdefiniowano styl dla obrazka wewnątrz slajdu, dostosowując go do pełnego wypełnienia obszaru, zachowując proporcje i centrując go.
+
+Markup:
+    .slide > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+
+Styleguide 8.3
+*/
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -398,8 +848,3 @@ h2 {
 
 
 
-/* Cosmos - Strona główna  ### Kod HTML:  - <div id="header">, zawiera nagłówek strony kontener paralaksy i obiekty reagujące z nią  - <aside> zawiera baner boczny służacy do szybszej navigacji po stronie głównej  - Sekcja <section class="main-section" id="main-section">, zawiera kontener z artykułem i grafiką do tekstu.  - <section id="ukladSloneczny"> zawiera responsywny układ słoneczny reagujący na najechanie.  - Sekcja<section id="GwiazdyEdukacj"> Zawiera responsywny układ kontenerów zawierających fotografie,opis, imie i nazwisko ważnych osób.  ### Kod CSS:  - Styl dla nagłówka z klasą "parallax-container parallax-layer": Ustawia obraz jako tło, utala wielkość i szerokość kontenera. Dopasowywuje obraz dła do wielkości i blokuje powtarzanie.  - Styl dla aside: Ustawia wielkość elementu, przykleja go do prawej krawędzi ekranu.  - Styl dla sekcji z klasą "main-section": Ustawia sposób wyświetlania na stronie.  - Styl dla artykułu z klasą "tekst": Ustawia spo 
-
-
-Style guide: 1
-*/
