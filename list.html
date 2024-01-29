@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizator Zadań</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-top">
+            <li><a href="index.html">HOME</a></li>
+            <li class="open-button" onclick="openForm()"><a href="#">FORM </a></li>
+            <li><a href="list.html">LIST</a></li>
+        </ul>
+    </nav>
+
+    <section class="form-popup" id="topForm">
+        <form action="#" name="contact-form" class="formContainer" onsubmit="return validateForm()">
+            <label for="email">Podaj swój email: </label>
+            <input type="email" class="form-inputs" id="email" name="email">
+            <label for="phone-number">Podaj swój nr telefonu: </label>
+            <input inputmode="numeric" pattern="[0-9]*" class="form-inputs" id="phone-number" name="phone-number">
+            <label for="textarea">Treść wiadomości: <br><textarea name="textarea" id="textfield"></textarea></label>
+            <button id="wyslij">Wyślij</button>
+            <button type="button" id="cancel" onclick="closeForm()">Wstecz</button>
+        </form>
+    </section>
+
+
+
+    <section class="weather">
+        <h2>Przed planami sprawdź pogodę!</h2>
+        <div id="weather-info">
+            <h3>Pogoda w Rzeszowie:</h3>
+            <p id="cloud-cover"></p>
+            <p id="temperature"></p>
+        </div>
+    </section>
+
+    <section class="to-do-list">
+        <div id="todo-container">
+            <p id="tasks">Zakończone zadania: </p>
+            <h2>To-Do-List <br>Get it done quick.</h2>
+            <label for="chkbox"><input type="checkbox" name="chkbox" id="chkbox">Ustaw priorytet</label>
+            <input type="text" id="task-input" placeholder="Dodaj nowe zadanie">
+                     
+            <button id="add-task-btn" onclick="addTask()">Dodaj zadanie</button>
+
+            <ul id="task-list"></ul>
+        </div>
+    </section>
+
+    <footer>
+            <div class="row">
+                <a href="https://github.com/Nostalgiox" target="_blank"><img src="/images/icons/github.svg" alt="img"> Github</a>
+                <a href="https://open.spotify.com/?" target="_blank"><img src="/images/icons/spotify.svg" alt="img"> Spotify</a>
+            </div>
+    </footer>
+
+
+<script src="scripts/to-do-list.js"></script>
+<script src="scripts/form.js"></script>
+
+</body>
+</html>
