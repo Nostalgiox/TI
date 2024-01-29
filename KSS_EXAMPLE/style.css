@@ -325,7 +325,6 @@ label {
     cursor: pointer;
 }
 
-/* */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -396,3 +395,11 @@ label {
 h2 {
     text-align: center;
 }
+
+
+
+/* Cosmos - Strona główna  ### Kod HTML:  - <div id="header">, zawiera nagłówek strony kontener paralaksy i obiekty reagujące z nią  - <aside> zawiera baner boczny służacy do szybszej navigacji po stronie głównej  - Sekcja <section class="main-section" id="main-section">, zawiera kontener z artykułem i grafiką do tekstu.  - <section id="ukladSloneczny"> zawiera responsywny układ słoneczny reagujący na najechanie.  - Sekcja<section id="GwiazdyEdukacj"> Zawiera responsywny układ kontenerów zawierających fotografie,opis, imie i nazwisko ważnych osób.  ### Kod CSS:  - Styl dla nagłówka z klasą "parallax-container parallax-layer": Ustawia obraz jako tło, utala wielkość i szerokość kontenera. Dopasowywuje obraz dła do wielkości i blokuje powtarzanie.  - Styl dla aside: Ustawia wielkość elementu, przykleja go do prawej krawędzi ekranu.  - Styl dla sekcji z klasą "main-section": Ustawia sposób wyświetlania na stronie.  - Styl dla artykułu z klasą "tekst": Ustawia spo 
+
+
+Style guide: 1
+*/
