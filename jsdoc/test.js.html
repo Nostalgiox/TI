@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: test.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: test.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Asynchronous function that retrieves weather data from the specified API endpoint
+ * and updates the HTML page with the latest information.
+ *
+ * This function fetches weather data from the provided API endpoint and updates
+ * designated HTML elements with the temperature and cloud cover information. It utilizes
+ * the 'updateWeatherData' function to accomplish this task.
+ *
+ * @async
+ * @function
+ * @name fetchAndUpdateWeatherData
+ * @memberof global
+ *
+ * @throws {Error} Throws an error if the API response is not successful (HTTP status other than 200).
+ *
+ * @example
+ * // Usage example:
+ * fetchAndUpdateWeatherData('https://api.open-meteo.com/v1/forecast?latitude=50.0413&amp;longitude=21.999&amp;hourly=temperature_2m,cloud_cover&amp;timezone=auto&amp;past_days=7');
+ *
+ * @param {string} weatherURL - The URL of the weather API endpoint to fetch data from.
+ * @returns {Promise&lt;void>} A Promise that resolves after updating the weather data on the HTML page.
+ */
+async function fetchAndUpdateWeatherData(weatherURL) {
+    try {
+        // Fetch weather data from the specified API endpoint
+        const response = await fetch(weatherURL);
+
+        // Check if the API response is successful
+        if (!response.ok) {
+            throw new Error('Failed to retrieve weather data. Error code: ' + response.status);
+        }
+
+        // Parse the response as JSON
+        const data = await response.json();
+
+        // Update weather data on the HTML page
+        updateWeatherData(data);
+    } catch (error) {
+        // Log any errors that occur during the process
+        console.error('An error occurred:', error);
+    }
+}
+
+/**
+ * Function that updates designated HTML elements with the latest weather information.
+ *
+ * This function takes the weather data received from the API and updates designated
+ * HTML elements with the current temperature and cloud cover information. It is typically
+ * called after successfully fetching weather data.
+ *
+ * @function
+ * @name updateWeatherData
+ * @memberof global
+ *
+ * @param {Object} data - The weather data object received from the API.
+ * @property {Object} data.hourly - The hourly forecast data.
+ * @property {number[]} data.hourly.temperature_2m - Array containing hourly temperature values.
+ * @property {number[]} data.hourly.cloud_cover - Array containing hourly cloud cover percentage values.
+ * @returns {void}
+ */
+function updateWeatherData(data) {
+    // Get the temperature element from the DOM
+    const temperatureElement = document.getElementById('temperature');
+    // Update the temperature content with the latest value from the API
+    temperatureElement.textContent = 'Temperature: ' + data.hourly.temperature_2m[0] + '°C';
+
+    // Get the cloud cover element from the DOM
+    const cloudCoverElement = document.getElementById('cloud-cover');
+    // Update the cloud cover content with the latest value from the API
+    cloudCoverElement.textContent = 'Cloud Cover: ' + data.hourly.cloud_cover[0] + '%';
+}
+
+/**
+ * Function that validates the input fields in a contact form and performs the following actions:
+ * - Checks if the email field is empty; if yes, displays an alert and returns false.
+ * - Checks if the phone number field is empty; if yes, displays an alert and returns false.
+ * - Checks if the message field is empty; if yes, displays an alert and returns false.
+ * - If all fields are filled, stores the email, phone number, and message in the local storage.
+ * - Logs the stored email in the console.
+ * - Displays a success alert indicating that the form has been successfully submitted.
+ *
+ * @function
+ * @name validateForm
+ * @memberof global
+ * 
+ * @returns {boolean} Returns true if the form is successfully validated and submitted; otherwise, returns false.
+ *
+ * @example
+ *  HTML example:
+ *  &lt;form action="#" name="contact-form" class="formContainer" onsubmit="return validateForm()">
+ *           &lt;label for="email">Podaj swój email: &lt;/label>
+ *           &lt;input type="email" class="form-inputs" id="email" name="email">
+ *           &lt;label for="phone-number">Podaj swój nr telefonu: &lt;/label>
+ *           &lt;input inputmode="numeric" pattern="[0-9]*" class="form-inputs" id="phone-number" name="phone-number">
+ *           &lt;label for="textarea">Treść wiadomości: &lt;/label>
+ *          &lt;textarea name="textarea" id="textfield">&lt;/textarea>
+ *           &lt;br>
+ *           &lt;button id="wyslij">Wyślij&lt;/button>
+ *          &lt;button type="button" id="cancel" onclick="closeForm()">Wstecz&lt;/button>
+ *       &lt;/form>
+ * 
+ *  JavaScript example:
+ *  validateForm();
+ */
+function validateForm() {
+    // Get values from form fields
+    let email = document.forms["contact-form"]["email"].value;
+    let phoneNumber = document.forms["contact-form"]["phone-number"].value;
+    let textField = document.forms["contact-form"]["textfield"].value;
+
+    // Check if the email field is empty
+    if (email == "") {
+        alert("Email cannot be empty!");
+        return false;
+    } 
+    // Check if the phone number field is empty
+    else if (phoneNumber == "") {
+        alert("Phone number cannot be empty!");
+        return false;
+    } 
+    // Check if the message field is empty
+    else if (textField == "") {
+        alert("Message cannot be empty!");
+        return false;
+    } else {
+        // Store form data in local storage
+        localStorage.setItem('email', email);
+        localStorage.setItem('phone_number', phoneNumber);
+        localStorage.setItem('text_field_message', textField);
+
+        // Log the stored email in the console
+        console.log(localStorage.getItem('email'));
+
+        // Display a success alert
+        alert("Form has been successfully submitted!");
+        return true;
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#checkbox">checkbox</a></li><li><a href="global.html#closeForm">closeForm</a></li><li><a href="global.html#completeForm">completeForm</a></li><li><a href="global.html#completedNonPriorityTasks">completedNonPriorityTasks</a></li><li><a href="global.html#completedPriorityTasks">completedPriorityTasks</a></li><li><a href="global.html#completedTasks">completedTasks</a></li><li><a href="global.html#fetchAndUpdateWeatherData">fetchAndUpdateWeatherData</a></li><li><a href="global.html#openForm">openForm</a></li><li><a href="global.html#resolveAfter1Seconds">resolveAfter1Seconds</a></li><li><a href="global.html#taskInput">taskInput</a></li><li><a href="global.html#taskList">taskList</a></li><li><a href="global.html#updateWeatherData">updateWeatherData</a></li><li><a href="global.html#validateForm">validateForm</a></li><li><a href="global.html#weatherURL">weatherURL</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Feb 05 2024 12:33:17 GMT+0100 (czas środkowoeuropejski standardowy)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

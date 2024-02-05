@@ -142,7 +142,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line192">line 192</a>
+        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line262">line 262</a>
     </li></ul></dd>
     
 
@@ -814,7 +814,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line181">line 181</a>
+        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line251">line 251</a>
     </li></ul></dd>
     
 
@@ -938,6 +938,199 @@
     
 
     
+    <h4 class="name" id="fetchAndUpdateWeatherData"><span class="type-signature"></span>fetchAndUpdateWeatherData<span class="signature">(weatherURL)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Asynchronous function that retrieves weather data from the specified API endpointand updates the HTML page with the latest information.This function fetches weather data from the provided API endpoint and updatesdesignated HTML elements with the temperature and cloud cover information. It utilizesthe 'updateWeatherData' function to accomplish this task.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>weatherURL</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The URL of the weather API endpoint to fetch data from.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line137">line 137</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws an error if the API response is not successful (HTTP status other than 200).
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A Promise that resolves after updating the weather data on the HTML page.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Usage example:fetchAndUpdateWeatherData('https://api.open-meteo.com/v1/forecast?latitude=50.0413&amp;longitude=21.999&amp;hourly=temperature_2m,cloud_cover&amp;timezone=auto&amp;past_days=7');</code></pre>
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="openForm"><span class="type-signature"></span>openForm<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
@@ -990,7 +1183,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line170">line 170</a>
+        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line240">line 240</a>
     </li></ul></dd>
     
 
@@ -1144,7 +1337,7 @@
 
 
 <div class="description">
-    Function to update weather data on the HTML page.
+    Function to update weather data on the HTML page.Function that updates designated HTML elements with the latest weather information.This function takes the weather data received from the API and updates designatedHTML elements with the current temperature and cloud cover information. It is typicallycalled after successfully fetching weather data.
 </div>
 
 
@@ -1196,7 +1389,7 @@
 
             
 
-            <td class="description last">Weather data received from the API.</td>
+            <td class="description last">The weather data object received from the API.</td>
         </tr>
 
     
@@ -1204,6 +1397,129 @@
 </table>
 
 
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data.hourly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The hourly forecast data.
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>temperature_2m</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Array containing hourly temperature values.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cloud_cover</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Array containing hourly cloud cover percentage values.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -1237,7 +1553,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line115">line 115</a>
+        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line111">line 111</a>
     </li></ul></dd>
     
 
@@ -1281,7 +1597,7 @@
 
 
 <div class="description">
-    Function to validate the contact form.
+    Function that validates the input fields in a contact form and performs the following actions:- Checks if the email field is empty; if yes, displays an alert and returns false.- Checks if the phone number field is empty; if yes, displays an alert and returns false.- Checks if the message field is empty; if yes, displays an alert and returns false.- If all fields are filled, stores the email, phone number, and message in the local storage.- Logs the stored email in the console.- Displays a success alert indicating that the form has been successfully submitted.
 </div>
 
 
@@ -1325,7 +1641,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line141">line 141</a>
+        <a href="jsdoc-script.js.html">jsdoc-script.js</a>, <a href="jsdoc-script.js.html#line179">line 179</a>
     </li></ul></dd>
     
 
@@ -1354,7 +1670,7 @@
 
         
 <div class="param-desc">
-    - Returns true if the form is valid, otherwise returns false.
+    Returns true if the form is successfully validated and submitted; otherwise, returns false.
 </div>
 
 
@@ -1376,6 +1692,11 @@
 
 
 
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>HTML example: &lt;form action="#" name="contact-form" class="formContainer" onsubmit="return validateForm()">          &lt;label for="email">Podaj swój email: &lt;/label>          &lt;input type="email" class="form-inputs" id="email" name="email">          &lt;label for="phone-number">Podaj swój nr telefonu: &lt;/label>          &lt;input inputmode="numeric" pattern="[0-9]*" class="form-inputs" id="phone-number" name="phone-number">          &lt;label for="textarea">Treść wiadomości: &lt;/label>         &lt;textarea name="textarea" id="textfield">&lt;/textarea>          &lt;br>          &lt;button id="wyslij">Wyślij&lt;/button>         &lt;button type="button" id="cancel" onclick="closeForm()">Wstecz&lt;/button>      &lt;/form> JavaScript example: validateForm();</code></pre>
+
+
 
         
     
@@ -1393,13 +1714,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#checkbox">checkbox</a></li><li><a href="global.html#closeForm">closeForm</a></li><li><a href="global.html#completeForm">completeForm</a></li><li><a href="global.html#completedNonPriorityTasks">completedNonPriorityTasks</a></li><li><a href="global.html#completedPriorityTasks">completedPriorityTasks</a></li><li><a href="global.html#completedTasks">completedTasks</a></li><li><a href="global.html#openForm">openForm</a></li><li><a href="global.html#resolveAfter1Seconds">resolveAfter1Seconds</a></li><li><a href="global.html#taskInput">taskInput</a></li><li><a href="global.html#taskList">taskList</a></li><li><a href="global.html#updateWeatherData">updateWeatherData</a></li><li><a href="global.html#validateForm">validateForm</a></li><li><a href="global.html#weatherURL">weatherURL</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#buttons">buttons</a></li><li><a href="global.html#checkbox">checkbox</a></li><li><a href="global.html#closeForm">closeForm</a></li><li><a href="global.html#completeForm">completeForm</a></li><li><a href="global.html#completedNonPriorityTasks">completedNonPriorityTasks</a></li><li><a href="global.html#completedPriorityTasks">completedPriorityTasks</a></li><li><a href="global.html#completedTasks">completedTasks</a></li><li><a href="global.html#fetchAndUpdateWeatherData">fetchAndUpdateWeatherData</a></li><li><a href="global.html#openForm">openForm</a></li><li><a href="global.html#resolveAfter1Seconds">resolveAfter1Seconds</a></li><li><a href="global.html#taskInput">taskInput</a></li><li><a href="global.html#taskList">taskList</a></li><li><a href="global.html#updateWeatherData">updateWeatherData</a></li><li><a href="global.html#validateForm">validateForm</a></li><li><a href="global.html#weatherURL">weatherURL</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Jan 29 2024 13:44:05 GMT+0100 (czas środkowoeuropejski standardowy)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Feb 05 2024 12:33:17 GMT+0100 (czas środkowoeuropejski standardowy)
 </footer>
 
 <script> prettyPrint(); </script>
